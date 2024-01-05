@@ -7,6 +7,34 @@
         public double Time = time;
         public List<ICommand> Commands = [];
 
+        public bool HasDoubleIncome
+        {
+            get
+            {
+                for (int i = Commands.Count - 1; i > 0; i--)
+                {
+                    if (Commands[i] is DoubleIncome) return true;
+                }
+
+                return false;
+            }
+        }
+
+        public bool HasDoubleIncomeInTheMiddle
+        {
+            get
+            {
+                for (int i = Commands.Count - 4; i > 3; i--)
+                {
+                    if (Commands[i] is DoubleIncome) return true;
+                }
+
+                return false;
+            }
+        }
+
+        public bool HasDoubleIncomeGoFirst => Commands[^1] is DoubleIncome;
+
         public void PrintOneLine()
         {
             StringBuilder sb = new($"{Time:f2}: ");
