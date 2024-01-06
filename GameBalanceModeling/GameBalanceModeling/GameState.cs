@@ -7,7 +7,7 @@
 
         public bool IsVictory => GameplayData.Level >= 10;
         public bool IsIncomeDoubled => GameplayData.IsIncomeDoubled;
-        public int Level => GameplayData.Level;
+        public long Level => GameplayData.Level;
         public double Time => GameplayData.Time;
 
         public void LevelUp() => GameplayData.LevelUp();

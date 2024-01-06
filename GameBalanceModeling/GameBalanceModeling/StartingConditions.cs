@@ -2,19 +2,19 @@
 {
     public class StartingConditions
     {
-        public int LevelUpCost;
-        public int IncomePerSec;
-        public int DoubleIncomeCost;
+        public long LevelUpCost;
+        public long IncomePerSec;
+        public long DoubleIncomeCost;
         public double LevelUpCostFactor;
         public double IncomePerSecFactor;
 
         public StartingConditions()
         {
-            LevelUpCost = 5;
-            IncomePerSec = 10;
-            DoubleIncomeCost = 10;
-            LevelUpCostFactor = 1.1;
-            IncomePerSecFactor = 1.1;
+            LevelUpCost = 2;
+            IncomePerSec = 2;
+            DoubleIncomeCost = 2;
+            LevelUpCostFactor = 1;
+            IncomePerSecFactor = 1;
         }
 
         public void Print()
@@ -30,41 +30,41 @@
         {
             if (LevelUpCost < 10000)
             {
-                LevelUpCost *= 2;
+                LevelUpCost = (long)(LevelUpCost * 1.5);
                 return true;
             }
 
             if (IncomePerSec < 10000)
             {
-                LevelUpCost = 10;
-                IncomePerSec *= 2;
+                LevelUpCost = 2;
+                IncomePerSec = (long)(IncomePerSec * 1.5);
                 return true;
             }
 
             if (DoubleIncomeCost < 10000)
             {
-                LevelUpCost = 10;
-                IncomePerSec = 10;
-                DoubleIncomeCost *= 2;
+                LevelUpCost = 2;
+                IncomePerSec = 2;
+                DoubleIncomeCost = (long)(DoubleIncomeCost * 1.5);
                 return true;
             }
 
             if (LevelUpCostFactor < 13)
             {
-                LevelUpCost = 10;
-                IncomePerSec = 10;
-                DoubleIncomeCost = 10;
-                LevelUpCostFactor += 0.3;
+                LevelUpCost = 2;
+                IncomePerSec = 2;
+                DoubleIncomeCost = 2;
+                LevelUpCostFactor += 0.2;
                 return true;
             }
 
             if (IncomePerSecFactor < 13)
             {
-                LevelUpCost = 10;
-                IncomePerSec = 10;
-                DoubleIncomeCost = 10;
-                LevelUpCostFactor = 0.1;
-                IncomePerSecFactor += 0.3;
+                LevelUpCost = 2;
+                IncomePerSec = 2;
+                DoubleIncomeCost = 2;
+                LevelUpCostFactor = 1;
+                IncomePerSecFactor += 0.2;
                 return true;
             }
 

@@ -4,11 +4,11 @@
     {
         public bool IsIncomeDoubled = false;
         public double Time = 0;
-        public int Level = 1;
+        public long Level = 1;
 
-        public int LevelUpCost = startingConditions.LevelUpCost;
-        public int IncomePerSec = startingConditions.IncomePerSec;
-        public int DoubleIncomeCost = startingConditions.DoubleIncomeCost;
+        public long LevelUpCost = startingConditions.LevelUpCost;
+        public long IncomePerSec = startingConditions.IncomePerSec;
+        public long DoubleIncomeCost = startingConditions.DoubleIncomeCost;
         public double LevelUpCostFactor = startingConditions.LevelUpCostFactor;
         public double IncomePerSecFactor = startingConditions.IncomePerSecFactor;
 
@@ -16,8 +16,8 @@
         {
             Level++;
             Time += (double)LevelUpCost / IncomePerSec;
-            IncomePerSec = (int)(IncomePerSec * IncomePerSecFactor);
-            LevelUpCost = (int)(LevelUpCost * LevelUpCostFactor);
+            IncomePerSec = (long)(IncomePerSec * IncomePerSecFactor);
+            LevelUpCost = (long)(LevelUpCost * LevelUpCostFactor);
         }
 
         public void DoubleIncome()

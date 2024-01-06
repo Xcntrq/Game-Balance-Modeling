@@ -24,7 +24,7 @@
         {
             get
             {
-                for (int i = Commands.Count - 4; i > 3; i--)
+                for (int i = Commands.Count - 3; i > 2; i--)
                 {
                     if (Commands[i] is DoubleIncome) return true;
                 }
